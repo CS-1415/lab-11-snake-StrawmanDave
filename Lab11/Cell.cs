@@ -1,13 +1,26 @@
 namespace Lab11;
 
-public struct Cell
+public class Cell : AbstractGraphic2D
 {
-    public double XPostions{get;}
-    public double YPostions{get;}
+    public decimal X{get;}
+    public decimal Y{get;}
 
-    public Cell(double x, double y)
+    public override decimal LowerBoundX { get; protected set;}
+    public override decimal UpperBoundX { get; protected set;}
+    public override decimal LowerBoundY { get; protected set;}
+    public override decimal UpperBoundY { get; protected set;}
+
+    public Cell(decimal x, decimal y)
     {
-        XPostions = x;
-        YPostions = y;
+        X = x;
+        Y = y;
+        
+        LowerBoundX = UpperBoundX = X;
+        LowerBoundY = UpperBoundY = Y;
+    }
+
+    public override bool ContainsPoint(decimal x, decimal y)
+    {
+        return X == x && Y == y;
     }
 }
