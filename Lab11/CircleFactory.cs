@@ -1,6 +1,6 @@
 namespace Lab11;
 
-public class CirlceFactory : IGrahic2DFactory
+public class CirlceFactory : IGraphic2DFactory
 {
     public string Name { get => "Circle"; set => value = "Circle";}
     public IGraphic2D Create()

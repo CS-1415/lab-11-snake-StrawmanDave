@@ -1,6 +1,6 @@
 namespace Lab11;
 
-public interface IGrahic2DFactory
+public interface IGraphic2DFactory
 {
     string Name {get; protected set;} 
 

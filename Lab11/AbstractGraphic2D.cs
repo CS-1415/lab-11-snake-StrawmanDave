@@ -69,5 +69,4 @@ public abstract class AbstractGraphic2D : IGraphic2D
         Console.SetCursorPosition(0, 0);
         return !skippedSome;
     }
-
 }

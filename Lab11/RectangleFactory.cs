@@ -1,6 +1,6 @@
 namespace Lab11;
 
-public class RectangleFactory : IGrahic2DFactory
+public class RectangleFactory : IGraphic2DFactory
 {
     public string Name { get => "Rectangle"; set => value = "Rectangle"; }
 
