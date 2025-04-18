@@ -1,0 +1,12 @@
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\bin\Debug\net9.0\Lab11.deps.json
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\bin\Debug\net9.0\Lab11.dll
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\bin\Debug\net9.0\Lab11.pdb
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.AssemblyInfoInputs.cache
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.AssemblyInfo.cs
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.csproj.CoreCompileInputs.cache
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.sourcelink.json
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.dll
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\refint\Lab11.dll
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\Lab11.pdb
+C:\Users\HumbleIcarus\Documents\Programming 1410-1415\lab-11-snake-StrawmanDave\Lab11\obj\Debug\net9.0\ref\Lab11.dll
