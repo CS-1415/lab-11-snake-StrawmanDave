@@ -1,38 +1,40 @@
 ﻿using Lab11;
-int moveX = 1;
 
-List<IGraphic2D> shapes = new List<IGraphic2D> {
-    new Circle(moveX, 1, 0.5m) { BackgroundColor = ConsoleColor.DarkYellow, DisplayChar = ' ' }, // yellow head
-};
+Board biggest = new Board(54, 215); // biggest grid we want is the height to be 54 and the width to be 215
+Snake test = new Snake("me", 2, 2, biggest);
+biggest.snakes.Add(test);
 
-Console.Clear();
-AbstractGraphic2D.Display(shapes);
-
-// moveForward();
-Console.Clear();
-AbstractGraphic2D.Display(shapes);
-
+Console.WriteLine("I highly recommend making the terminal full screen. Press any button to continue");
 Console.ReadKey();
-moveForward(shapes);
 
-while (true)
+Console.Clear();
+AbstractGraphic2D.Display(biggest.Display);
+AbstractGraphic2D.Display(test.Body);
+while(true)
 {
-    switch (Console.ReadKey().Key)
+    switch (Console.ReadKey(true).Key)
     {
         case ConsoleKey.D:
-        moveForward(shapes);
+        test.turnEast();
+        break;
+        case ConsoleKey.W:
+        test.turnNorth();
+        break;
+        case ConsoleKey.A:
+        test.turnWest();
+        break;
+        case ConsoleKey.S:
+        test.turnSouth();
         break;
     }
-}
+    test.moveForward(test.Body);
 
-void moveForward(List<IGraphic2D> list)
-{
-    moveX = moveX + 2;
-    list = new List<IGraphic2D>
+    if(test.Head.X == biggest.Apple.X && test.Head.Y == biggest.Apple.Y)
     {
-        new Circle(moveX, 1, 0.5m){ BackgroundColor = ConsoleColor.DarkYellow, DisplayChar = ' '},
-    };
+        biggest.NextApple();
+    }
 
     Console.Clear();
-    AbstractGraphic2D.Display(list);
+    AbstractGraphic2D.Display(biggest.Display);
+    AbstractGraphic2D.Display(test.Body);
 }
