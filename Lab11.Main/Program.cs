@@ -1,7 +1,7 @@
 ﻿using Lab11;
 
 Board biggest = new Board(54, 215); // biggest grid we want is the height to be 54 and the width to be 215
-Snake test = new Snake("me", 2, 2, biggest);
+Snake test = new Snake("me", 3, 2, biggest);
 biggest.snakes.Add(test);
 
 Console.WriteLine("I highly recommend making the terminal full screen. Press any button to continue");
@@ -27,11 +27,11 @@ while(true)
         test.turnSouth();
         break;
     }
-    test.moveForward(test.Body);
+    test.moveForward();
 
     if(test.Head.X == biggest.Apple.X && test.Head.Y == biggest.Apple.Y)
     {
-        biggest.NextApple();
+        // biggest.NextApple();
     }
 
     Console.Clear();
