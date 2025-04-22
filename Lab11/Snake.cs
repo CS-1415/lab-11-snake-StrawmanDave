@@ -5,24 +5,20 @@ public class Snake
     public string? Name{get; set;} //player's name
     public List<IGraphic2D> Body {get; set;} //list of cells ocupied by the head and tail
     public Board Board {get; set;} // refrence to a board
-    public Cell Head{get; set;}
-    public Cell Tail{get; set;}
     Dircetions Current{get; set;}
-    public decimal MoveX{get; set;}
-    public decimal MoveY{get; set;}
+    public int MoveX{get; set;}
+    public int MoveY{get; set;}
 
-    public Snake(string? name , decimal movex, decimal movey, Board board)
+    public Snake(string? name , int movex, int movey, Board board)
     {
         Name = name;
         MoveX = movex;
         MoveY = movey;
 
-        Head = new Cell(MoveX, MoveY){BackgroundColor = ConsoleColor.Green, DisplayChar = '>'};
-        Tail = new Cell(Head.X - 1, Head.Y) {BackgroundColor = ConsoleColor.Green, DisplayChar = '>'};
-
         Body = new List<IGraphic2D>
         {
-            Tail,Head
+            new Cell(MoveX - 1, MoveY) {BackgroundColor = ConsoleColor.Green, DisplayChar = '>'},
+            new Cell(MoveX, MoveY){BackgroundColor = ConsoleColor.Green, DisplayChar = '>'}
         };
         Board = board;
         Board.snakes.Add(this);
@@ -54,7 +50,7 @@ public class Snake
         switch (Current)
         {
             case Dircetions.North:
-            if(canMove(MoveX, MoveY - 1, Board) == true)
+            if(canMove(MoveX, MoveY - 1) == true)
             {
                 MoveY = MoveY - 1;
                 
@@ -62,7 +58,7 @@ public class Snake
             }
             break;
             case Dircetions.South:
-            if(canMove(MoveX,MoveY + 1, Board) == true)
+            if(canMove(MoveX,MoveY + 1) == true)
             {
                 MoveY = MoveY + 1;
                 
@@ -70,7 +66,7 @@ public class Snake
             }
             break;
             case Dircetions.West:
-            if(canMove(MoveX -1,MoveY,Board) == true)
+            if(canMove(MoveX -1, MoveY) == true)
             {
                 MoveX = MoveX - 1;
                 
@@ -78,7 +74,7 @@ public class Snake
             }
             break;
             case Dircetions.East:
-            if(canMove(MoveX + 1,MoveY, Board) == true)
+            if(canMove(MoveX + 1,MoveY) == true)
             {
                 MoveX = MoveX + 1;
                 
@@ -86,7 +82,8 @@ public class Snake
             }
             break;
         }
-        if(canMove(MoveX,MoveY, Board) != false)
+
+        if(canMove(MoveX,MoveY) != false)
         {
             if(MoveX == Board.Apple.X && MoveY == Board.Apple.Y)
             {
@@ -98,12 +95,11 @@ public class Snake
                 Body.Add(newCell);
             }
         }
-        
     }
 
-    public bool canMove(decimal movex, decimal movey, Board on)
+    public bool canMove(int movex, int movey)
     {
-        return (movex > 0 && movex < Board.Width && movey > 0 && movey < Board.Height);
+        return movex > 0 && movex < Board.Width && movey > 0 && movey < Board.Height;
     }
 
     enum Dircetions{North,South, East, West};

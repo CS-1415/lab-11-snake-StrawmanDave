@@ -27,13 +27,15 @@ while(true)
         test.turnSouth();
         break;
     }
-    test.moveForward();
 
-    if(test.Head.X == biggest.Apple.X && test.Head.Y == biggest.Apple.Y)
+    if(test.Body.Count() <= 1)
     {
-        // biggest.NextApple();
+        break;
+    }else
+    {
+        test.moveForward();
     }
-
+    
     Console.Clear();
     AbstractGraphic2D.Display(biggest.Display);
     AbstractGraphic2D.Display(test.Body);
