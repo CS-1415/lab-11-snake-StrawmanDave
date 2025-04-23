@@ -44,7 +44,7 @@ public class Board
         int NextX = rand.Next(0,Width);
         int NextY = rand.Next(0,Height);
 
-        while(!canBePlaced(NextX, NextY) && !IsAtSnake())
+        while(!canBePlaced(NextX, NextY))
         {
             NextX = rand.Next(0,Width);
             NextY = rand.Next(0,Height);
@@ -61,20 +61,5 @@ public class Board
     public bool canBePlaced(int x, int y)
     {
         return x > 1 && x < Width && y > 1 && y < Height;
-    }
-
-    public bool IsAtSnake()
-    {
-        for (int i = 0; i < snakes.Count(); i++)
-        {
-            for(int j = 0; j < snakes[i].Body.Count; j++)
-            {
-                if(snakes[i].Body[j].Display() == Apple.Display())
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 }

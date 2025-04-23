@@ -10,8 +10,18 @@ Console.ReadKey();
 Console.Clear();
 AbstractGraphic2D.Display(biggest.Display);
 AbstractGraphic2D.Display(test.Body);
-while(true)
+
+
+do
 {
+    while(!Console.KeyAvailable)
+    {
+        test.moveForward();
+        Console.Clear();
+        AbstractGraphic2D.Display(biggest.Display);
+        AbstractGraphic2D.Display(test.Body);
+        Thread.Sleep(125);
+    }
     switch (Console.ReadKey(true).Key)
     {
         case ConsoleKey.D:
@@ -27,16 +37,4 @@ while(true)
         test.turnSouth();
         break;
     }
-
-    if(test.Body.Count() <= 1)
-    {
-        break;
-    }else
-    {
-        test.moveForward();
-    }
-    
-    Console.Clear();
-    AbstractGraphic2D.Display(biggest.Display);
-    AbstractGraphic2D.Display(test.Body);
-}
+}while(true);
